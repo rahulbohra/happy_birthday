@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Galleria Classic Theme</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<!-- load jQuery -->
+		<script src="js/jquery-1.6.2.min.js"></script>
+		<!-- load Galleria -->
+		<script src="js/galleria-1.2.6.min.js"></script>
+		<script src="js/custom.js"></script>
+	</head>
+<body>
+	<audio></audio>
+		<div id="top">
+			<ul class="options">
+				<li id="galleria_toggle_slideshow" class="galleria_pause">&nbsp;</li>
+				<li id="music" class="play">&nbsp;</li>
+			</ul>
+		</div><!-- end head_options -->
+	<div class="content">
+		<!-- Adding gallery images. We use resized thumbnails here for better performance, but it�s not necessary -->
+		<div id="galleria">
+        
+        
+        <img src="gallery/1.jpg" height="90%" width="90%" />
+        <img src="gallery/2.jpg" height="90%" width="90%" />
+        <img src="gallery/3.jpg" height="90%" width="90%" />
+        <img src="gallery/4.jpg" height="90%" width="90%" />
+        <img src="gallery/5.jpg" height="90%" width="90%" />
+        <img src="gallery/6.jpg" height="90%" width="90%" />
+        <img src="gallery/7.jpg" height="90%" width="90%" />
+        <img src="gallery/8.jpg" height="90%" width="90%" />
+        <img src="gallery/9.jpg" height="90%" width="90%" />
+        <img src="gallery/10.jpg" height="90%" width="90%" />
+        <img src="gallery/11.jpg" height="90%" width="90%" />
+        <img src="gallery/12.jpg" height="90%" width="90%" />
+        <img src="gallery/13.jpg" height="90%" width="90%" />
+        <img src="gallery/14.jpg" height="90%" width="90%" />
+        <img src="gallery/15.jpg" height="90%" width="90%" />
+        <img src="gallery/16.jpg" height="90%" width="90%" />
+        <img src="gallery/17.jpg" height="90%" width="90%" />
+        <img src="gallery/18.jpg" height="90%" width="90%" />
+        <img src="gallery/19.jpg" height="90%" width="90%" />
+        <img src="gallery/20.jpg" height="90%" width="90%" />
+                
+		</div>
+	</div>
+	<script>
+	// Load the classic theme
+	Galleria.loadTheme('fullscreen/galleria.fullscreen.js');
+	// Initialize Galleria
+	$('#galleria').galleria({
+		 autoplay: 5000
+	});
+	</script>
+	</body>
+</html>
