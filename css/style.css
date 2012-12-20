@@ -1,0 +1,57 @@
+#top {
+	left: 0;
+	position: absolute;
+	top: 10px;
+	width: 100%;
+	z-index: 999999;
+}
+#top ul{
+	float: right;
+	list-style: none;
+	margin: 0;
+}
+#top ul li{
+	padding: 10px;
+	width: 30px;
+	height: 20px;
+	cursor:pointer;
+}
+#top ul li#music{
+	background: url("../images/music.png") no-repeat 0 -42px transparent;
+}
+#top ul li#galleria_toggle_slideshow{
+	height: 10px;
+	margin-left: 5px;
+}
+#top ul li#galleria_toggle_slideshow.galleria_play{
+	background: url("../images/play.png") no-repeat scroll 0 -22px transparent;
+}
+#top ul li#galleria_toggle_slideshow.galleria_pause{
+	background: url("../images/pause.png") no-repeat scroll 0 -22px transparent;
+}
+
+#top ul li#music:hover{
+	background-position: 0px 0px;
+}
+
+/* for the modal box */
+.top-content {
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.75);
+	border-radius: 7px 7px 7px 7px;
+	color: #CCCCCC;
+	font: 18px "Dancing Script",cursive;
+	padding: 10px 15px 12px !important;
+	position: fixed;
+	right: 20px;
+	top: 60px;
+	z-index: 30000;
+}
+#top ul li#music.pause{
+	background-position: 0px 0px;
+}
+#top ul li#music.play{
+	background-position: 0px -42px;
+}
+.top-content {
+	cursor: pointer;
+}

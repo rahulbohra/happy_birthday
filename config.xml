@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+	xmlns:gap = "http://phonegap.com/ns/1.0"
+	id        = "in.kitnahua.happyBirthday"
+	version   = "1.0.0">
+	<name>Happy Birthday</name>
+	<description>
+		This application, is created in order to great a "Happy Birthday" to your loved ones.
+	</description>
+	<author email="rahulthespaceman@gmail.com">
+		Rahul Bohra
+	</author>
+</widget>
