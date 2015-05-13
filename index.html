@@ -1,58 +1,188 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Galleria Classic Theme</title>
-		<link rel="stylesheet" href="css/style.css" />
-		<!-- load jQuery -->
-		<script src="js/jquery-1.6.2.min.js"></script>
-		<!-- load Galleria -->
-		<script src="js/galleria-1.2.6.min.js"></script>
-		<script src="js/custom.js"></script>
-	</head>
-<body>
-	<audio></audio>
-		<div id="top">
-			<ul class="options">
-				<li id="galleria_toggle_slideshow" class="galleria_pause">&nbsp;</li>
-				<li id="music" class="play">&nbsp;</li>
-			</ul>
-		</div><!-- end head_options -->
-	<div class="content">
-		<!-- Adding gallery images. We use resized thumbnails here for better performance, but it�s not necessary -->
-		<div id="galleria">
-        
-        
-        <img src="gallery/1.jpg" height="90%" width="90%" />
-        <img src="gallery/2.jpg" height="90%" width="90%" />
-        <img src="gallery/3.jpg" height="90%" width="90%" />
-        <img src="gallery/4.jpg" height="90%" width="90%" />
-        <img src="gallery/5.jpg" height="90%" width="90%" />
-        <img src="gallery/6.jpg" height="90%" width="90%" />
-        <img src="gallery/7.jpg" height="90%" width="90%" />
-        <img src="gallery/8.jpg" height="90%" width="90%" />
-        <img src="gallery/9.jpg" height="90%" width="90%" />
-        <img src="gallery/10.jpg" height="90%" width="90%" />
-        <img src="gallery/11.jpg" height="90%" width="90%" />
-        <img src="gallery/12.jpg" height="90%" width="90%" />
-        <img src="gallery/13.jpg" height="90%" width="90%" />
-        <img src="gallery/14.jpg" height="90%" width="90%" />
-        <img src="gallery/15.jpg" height="90%" width="90%" />
-        <img src="gallery/16.jpg" height="90%" width="90%" />
-        <img src="gallery/17.jpg" height="90%" width="90%" />
-        <img src="gallery/18.jpg" height="90%" width="90%" />
-        <img src="gallery/19.jpg" height="90%" width="90%" />
-        <img src="gallery/20.jpg" height="90%" width="90%" />
-                
-		</div>
-	</div>
-	<script>
-	// Load the classic theme
-	Galleria.loadTheme('fullscreen/galleria.fullscreen.js');
-	// Initialize Galleria
-	$('#galleria').galleria({
-		 autoplay: 5000
-	});
-	</script>
-	</body>
+<html>
+  <head>
+    <title>
+      Happy Birthday Liza ! :D
+    </title>
+    <script type="text/javascript">
+      r = 255;
+      g = 255;
+			b = 255;
+			flag = 0;
+			t = new Array;
+			o = new Array;
+			d = new Array;
+			function hex (a, c){
+				t[a] = Math.floor (c / 16)
+				o[a] = c % 16
+				switch (t[a]){
+					case 10 :
+						t[a] = 'A';
+						break;
+					case 11 :
+						t[a] = 'B';
+						break;
+					case 12 :
+						t[a] = 'C';
+						break;
+					case 13 :
+						t[a] = 'D';
+						break;
+					case 14 :
+						t[a] = 'E';
+						break;
+					case 15 :
+						t[a] = 'F';
+						break;
+					default :
+  					break;
+				}
+				switch (o[a]){
+					case 10 :
+						o[a] = 'A';
+						break;
+					case 11 :
+						o[a] = 'B';
+						break;
+					case 12 :	
+						o[a] = 'C';
+						break;
+					case 13 :
+						o[a] = 'D';
+						break;
+					case 14 :
+						o[a] = 'E';
+						break;
+					case 15 :
+            o[a] = 'F';
+						break;
+					default:
+						break;
+				}
+		}
+		function ran (a, c){
+			if ( (Math.random () > 2 / 3 || c == 0 ) && c < 255){
+				c++
+				d[a] = 2;
+			}
+			else{
+				if ((Math.random () <= 1 / 2 || c == 255) && c > 0){
+					c--
+					d[a] = 1;
+				}
+				else{
+					d[a] = 0;
+				}
+			}
+			return c
+		}
+		function do_it (a, c){
+			if ((d[a] == 2 && c < 255) || c == 0){
+				c++
+				d[a] = 2
+			}
+			else{
+				if ((d[a] == 1 && c > 0) || c == 255){
+					c--;
+					d[a] = 1;
+				}
+			}
+			if (a == 3){
+				if (d[1] == 0 && d[2] == 0 && d[3] == 0)
+				flag = 1
+			}
+			return c
+		}
+		function disco (){
+			if (flag == 0){
+				r = ran (1, r);
+				g = ran (2, g);
+				b = ran (3, b);
+				hex (1, r)
+				hex (2, g)
+				hex (3, b)
+				document.body.style.background="#" + t[1] + o[1] + t[2] + o[2] + t[3] + o[3]
+				flag = 50
+			}
+			else{
+				r = do_it (1, r)
+				g = do_it (2, g)
+				b = do_it (3, b)
+				hex (1, r)
+				hex (2, g)
+				hex (3, b)
+				document.body.style.background="#" + t[1] + o[1] + t[2] + o[2] + t[3] + o[3]
+				flag--
+			}
+			setTimeout ('disco ()', 30)
+		}
+    </script> 
+    <p align=center><script language="javascript" type="text/javascript"src="http://htmlfreecodes.com/userdata/heart.js"></script></p>
+  </head>
+
+  <body>
+    <body onload="disco()">
+
+<marquee style="z-index:2;position:absolute;right:28px;top:197px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:200px;"scrollamount="3" direction="down">Happy Birthday Liza  </marquee>
+<marquee style="z-index:2;position:absolute;right:1px;top:89px;font-family:Cursive;font-size:14pt;color:white;height:100px;"scrollamount="7" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:111px;top:7px;font-family:Cursive;font-size:14pt;color:white;height:302px;"scrollamount="4" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:225px;top:83px;font-family:Cursive;font-size:14pt;color:white;height:371px;"scrollamount="3" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:105px;top:53px;font-family:Cursive;font-size:14pt;color:white;height:317px;"scrollamount="2" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:168px;top:69px;font-family:Cursive;font-size:14pt;color:white;height:369px;"scrollamount="1" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:130px;top:117px;font-family:Cursive;font-size:14pt;color:white;height:289px;"scrollamount="7" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:176px;top:57px;font-family:Cursive;font-size:14pt;color:white;height:78px;"scrollamount="7" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:16px;top:57px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:56px;"scrollamount="5" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:300px;top:86px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:194px;"scrollamount="2" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:292px;top:10px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:251px;"scrollamount="6" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:278px;top:74px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:154px;"scrollamount="1"direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:241px;top:72px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:82px;"scrollamount="3" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:276px;top:32px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:70px;"scrollamount="8" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:272px;top:15px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:334px;"scrollamount="11" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:90px;top:38px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:167px;"scrollamount="7" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:275px;top:108px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:375px;"scrollamount="7" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:22px;top:76px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:12px;"scrollamount="7" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:89px;top:54px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:366px;"scrollamount="2" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:26px;top:72px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:358px;"scrollamount="1" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:3px;top:44px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:130px;"scrollamount="3" direction="down">Happy Birthday Liza </marquee> 
+<marquee style="z-index:2;position:absolute;right:300px;top:108px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:375px;"scrollamount="7" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:335px;top:76px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:125px;"scrollamount="7" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:400px;top:54px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:366px;"scrollamount="2" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:355px;top:72px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:358px;"scrollamount="1" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:380px;top:44px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:375px;"scrollamount="3" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:28px;top:197px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:200px;"scrollamount="3" direction="down">Happy Birthday Liza  </marquee>
+<marquee style="z-index:2;position:absolute;left:1px;top:89px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:100px;"scrollamount="7" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:111px;top:7px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:302px;"scrollamount="4" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:225px;top:83px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:371px;"scrollamount="3" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:105px;top:53px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:317px;"scrollamount="2" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:168px;top:69px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:369px;"scrollamount="1" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:130px;top:117px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:289px;"scrollamount="7" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:176px;top:57px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:78px;"scrollamount="7" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:16px;top:57px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:56px;"scrollamount="5" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:300px;top:86px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:194px;"scrollamount="2" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:292px;top:10px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:251px;"scrollamount="6" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:278px;top:74px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:154px;"scrollamount="1"direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:241px;top:72px;font-family:Cursive;font-size:14pt;color:white;height:82px;"scrollamount="3" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:276px;top:32px;font-family:Cursive;font-size:14pt;color:white;height:70px;"scrollamount="8" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:272px;top:15px;font-family:Cursive;font-size:14pt;color:white;height:334px;"scrollamount="11" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:90px;top:38px;font-family:Cursive;font-size:14pt;color:white;height:167px;"scrollamount="7" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:275px;top:108px;font-family:Cursive;font-size:14pt;color:white;height:375px;"scrollamount="7" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:22px;top:76px;font-family:Cursive;font-size:14pt;color:white;height:12px;"scrollamount="7" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:89px;top:54px;font-family:Cursive;font-size:14pt;color:white;height:366px;"scrollamount="2" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:26px;top:72px;font-family:Cursive;font-size:14pt;color:white;height:358px;"scrollamount="1" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:3px;top:44px;font-family:Cursive;font-size:14pt;color:white;height:130px;"scrollamount="3" direction="down">Happy Birthday Liza </marquee> 
+<marquee style="z-index:2;position:absolute;left:300px;top:108px;font-family:Cursive;font-size:14pt;color:white;height:375px;"scrollamount="7" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:335px;top:76px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:125px;"scrollamount="7" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:400px;top:54px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:366px;"scrollamount="2" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;left:355px;top:72px;font-family:Cursive;font-size:14pt;color:#ffcc00;height:358px;"scrollamount="1" direction="down">Happy Birthday Liza </marquee>
+<marquee style="z-index:2;position:absolute;right:380px;top:44px;font-family:Cursive;font-size:14pt;color:black;height:375px;"scrollamount="3" direction="down">Happy Birthday Liza </marquee>    
+     </br> </br></br></br></br> </br>    </br>    </br>    </br>    </br>
+    
+    </br>    </br>
+    </br>    </br>    </br>    </br>    </br>    </br>    </br>    </br>
+    </br>
+    </br>
+    <center>
+	  <a href="http://notes.io/EGw" target="_blank"> Birthday Note</a>
+    </center>
+
+  </body>
 </html>
